@@ -25,7 +25,16 @@ req.session.user = {
 res.redirect("/")
 }
 
+const auth_signout_get = async (req,res) => {
+  req.session.destroy()
+res.redirect('/auth/sign-in')
+}
+
+
+
+
 module.exports = {
   auth_signin_get,
   auth_signin_post,
+  auth_signout_get,
 }
